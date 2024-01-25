@@ -1,0 +1,11 @@
+<app-todo-form (sendToParent)="receiveTodoFrorm($event)"></app-todo-form>
+<div class="container mt-2">
+    <div class="card bg-secondary">
+      <div class="card-body">
+        <h1 class="text-white">Let's Get Some Work Done</h1>
+        @for (task of list; track $index) {
+            <app-todo-list [TodoList]="task"  (sendToParent)="receiveTodoList($event)"></app-todo-list>
+            }
+    </div>
+    </div>
+  </div>
